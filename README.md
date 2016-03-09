@@ -7,5 +7,5 @@ Nusoap lib used in the class
 Server.php
 Server that provide the wsdl
 
-Cliente.php
+Service.php
 How to consume it
