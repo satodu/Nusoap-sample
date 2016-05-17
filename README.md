@@ -11,3 +11,8 @@ Server that provide the wsdl
 
 Service.php
 How to consume it
+
+# Things to fix
+- Factory the code;
+- Change CRUD like abstract class;
+- Upload some search sample Front-End;
