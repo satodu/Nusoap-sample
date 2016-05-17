@@ -1,13 +1,22 @@
 <?php
+/*
+Nome: Eduardo sato
+Version: 1.0
+Description : CRUD SOAP using NUSOAP
+*/
+//Call the reference lib
 require_once "lib/nusoap.php";
  
-$client = new nusoap_client("http://papoinformal.com.br/prueba/2/new/server.php?wsdl", true);
+//GET the server to consume
+$client = new nusoap_client("server.php?wsdl", true);
 
+//Get the API values
 $action = $_GET['action'];
 $id = $_GET['id'];
 $name = $_GET['name'];
 $description = $_GET['description'];
 
+//Create CRUD based in action
 if($action === "insert"){
  $client->call("crud.insertData", array("name" => "".$name."", "description" => "".$description.""));
 }
@@ -25,7 +34,7 @@ $result = $client->call("crud.GetData");
 echo build_table($result);
 }
 
-
+//Create visualization
     function build_table($array){
     // start table
     $html = '<table>';
@@ -44,9 +53,7 @@ echo build_table($result);
         }
         $html .= '</tr>';
     }
-
     // finish table and return it
-
     $html .= '</table>';
     return $html;
 }
