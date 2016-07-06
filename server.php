@@ -116,7 +116,7 @@ $server->register("crud.insertData",
 	 	}
 
 	 	public function updateData($id,$description,$name) {
-	 		$con=mysqli_connect("localhost","edsato_yunbit","modelo00","edsato_yunbit");
+	 		$con=mysqli_connect("localhost","user","pass","database");
 	 		if (mysqli_connect_errno())
 	 		{
 	 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -135,7 +135,7 @@ $server->register("crud.insertData",
 	 	}
 
 	 public function deleteData($id) {
-	 		$con=mysqli_connect("localhost","edsato_yunbit","modelo00","edsato_yunbit");
+	 		$con=mysqli_connect("localhost","user","pass","database");
 	 		if (mysqli_connect_errno())
 	 		{
 	 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
